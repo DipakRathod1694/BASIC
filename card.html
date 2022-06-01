@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        .card{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+        .main{
+            flex: 0 0 200px;
+            margin: 15px;
+            border: 2px solid gray;
+            box-shadow: 3px 4px 5px 0px black;
+        }
+        .main img{
+            max-width: 100%;
+        }
+        .main text{
+            padding: 0px 25px 25px;
+        }
+        .main .text > button{
+            background-color: aquamarine;
+            border: 2px solid blue;
+            padding: 5px;
+            max-width: 100%;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+    <article class="main">
+        <img src="https://picsum.photos/300/300/?random">
+        <div class="text">
+            <h3>Heading</h3>
+            <p>this is a random image.
+                enjoy it
+            </p>
+           <a href=""><button>buy now!</button></a>
+        </div>
+    </article>
+</main>
+</body>
+</html>

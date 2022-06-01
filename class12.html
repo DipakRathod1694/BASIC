@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        #main{
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            max-height: 500px;
+            background-color: aqua;
+            border: 1px solid black;
+            flex-flow: column;
+            
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            direction: rtl;
+            writing-mode: vertical-rl;
+            writing-mode: vertical-lr;
+        }
+        .box:nth-child(1){
+            flex: 1;
+            border: 2px solid red;
+        }
+        .box:nth-child(2){
+            flex: 2;
+            border: 2px solid red;
+        }
+        .box:nth-child(3){
+            flex: 3;
+            border: 2px solid red;
+        } 
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="box1 box">one</div>
+        <div class="box2 box">two</div>
+        <div class="box3 box">three</div>
+        <div>four</div>
+        <div>five</div>
+        <div>six</div>
+        <div>seven</div>
+    </div>
+    
+</body>
+</html>

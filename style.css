@@ -1,0 +1,124 @@
+/* /* /* p{
+    background-color: red;
+}
+.aaa{
+    font-size: 50px;
+}
+#sss{
+    color: yellow;
+}
+#d2{
+    color: blue;
+}
+p .bold {
+    color: green;
+}
+div{
+    text-shadow: 1;
+} 
+body{
+    border-style: double;
+    border-top-style: dashed;
+    border-bottom-style: solid;
+    border-width: 5px 20px 10px 50px;
+    border-color: orange red green pink;
+    padding:5px 10px 15px 20px;
+    margin: 20px;
+} 
+.styled-table{
+    width: 50%;
+    margin: 25px;
+    font-size: 1em;
+    box-sizing: border-box;
+    padding: 0em;
+    border-bottom: 2em;
+    border-collapse: collapse;
+    box-shadow:  0 0 23px rgba(0, 0,0,0.17);
+}
+thead{
+    background-color: #04aa6d;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+tbody{
+    border-bottom: 2px solid #04aa6d;
+}
+.active-row{
+    color: #04aa6d;
+    background-color: rgb(212,203,203);
+} */
+/* body{
+    margin: 100px auto;
+}
+.parent{
+    width: 500px;
+    border: 1px solid red;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+.child{
+    border-radius: 10%;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+.one{
+    background-color: powderblue;
+    position: sticky;
+    left: 360px ;
+    top: 0px;
+}
+.two{
+    background-color: blue;
+}
+.three{
+    background-color: saddlebrown;
+}
+.four{
+    background-color: purple; */
+/* } */
+body{
+    margin: 40%;
+}
+.aaa{
+    display: flex;
+    width: 600px;
+    height: 500px;
+    background-color: red;
+    align-items: center;
+}
+#One{
+    background-color: aqua;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    border-radius: 60%;
+    align-items: center;
+}
+#One:hover{
+    transform: rotate(60deg);
+}
+#Two{
+    background-color: blanchedalmond;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    align-items: left;
+    transform: rotate(45deg);
+}
+#Two:hover{
+    transform: translate(30px,80px);
+}
+#Three{
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    align-items: right;
+    transform: skew(35deg);
+}
+#Three:hover{
+    transform: rotate(45deg);
+}

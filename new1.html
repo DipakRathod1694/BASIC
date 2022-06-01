@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Step 1:Your Details</legend>
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name" placeholder="First and last name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@domail.com"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="Phone" placeholder="Eg. +918160122085"><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Step 2: Delivery Address</legend>
+            <label for="address">Address:</label>
+            <textarea id="address" name="Address" rows="10" cols="10"></textarea><br><br>
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="Postcode"><br><br>
+            <label for="country">Country:</label>
+            <select>
+                <option value="USA">USA</option>
+                <option value="INDIA">INDIA</option>
+                <option value="UK">UK</option>
+                <option value="CHINA">CHINA</option>
+                <option value="SRILANKA">SRILANKA</option>
+                <option value="NEPAL">NEPAL</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Step 3: Card Details</legend>
+            <label for="radio">Card Type:</label>
+            <input type="radio" id="radio" name="card" value="VISA">VISA
+            <input type="radio" id="radio" name="card" value="AmEx">AmEx
+            <input type="radio" id="radio" name="card" value="Mastercard">Mastercard<br><br>
+            <label for="cardnumber">Card Number:</label>
+            <input type="number" id="cardnumber" name="cardnumber"><br><br>
+            <label for="security">Security code:</label>
+            <input type="text" id="security" name="security code"><br><br>
+            <label for="nameoncard">Name on Card:</label>
+            <input type="text" id="nameoncard" name="Name on card" placeholder="Exact nam as on the card"> <br><br>
+        </fieldset>
+        <button name="BUY IT!">BUY IT!</button>
+    </form>
+</body>
+</html>
