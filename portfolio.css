@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    height: 100vh;
+}
+header nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+::selection{
+    background-color: green;
+}
+.nav-bar{
+    display: flex;
+    width: 95%;
+    margin: 25px auto 0px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .menu{
+    display: flex;
+    
+}
+nav .menu li{
+    margin: 10px;
+    list-style: none;
+}
+nav .menu a:hover{
+    color: blueviolet;
+}
+nav .menu a{
+    font-size: 15px;
+    color: brown;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav .SearchBox{
+    position: relative;
+    width: 180px;
+    height: 30px;
+}
+.searchbox input[type="text"]{
+    position: absolute;
+    font-size: 18px;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    color: #2c3350;
+    border: 2px solid #2c3350;
+    background: #f2f2f2;
+    padding: 0 10px 0 40px;
+
+}
+.SearchBox a{
+    position: absolute;
+    left: 148px;
+    top: 0%;
+    font-size: 13px;
+    color: blue;
+    /* transform: translateY(-50%); */
+    border: 2px solid gray;
+    padding: 1px;
+}
+.textContent{
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    z-index: 10;
+}
+header .textContent .text{
+    font-size: 20px;
+    color: goldenrod;
+}
+header .textContent .name{
+    font-size: 50px;
+    color: green;
+    font-weight: 600;
+    margin: -20px 0 0 -5px;
+}
+header .textContent .job{
+    font-size: 35px;
+    color: black;
+    margin: 20px 0;
+    display: flex;
+    margin-top: -3px;
+}
+.textContent .typingText{
+    margin-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 5px solid aqua;
+    animation: typing 6s steps(15) infinite;
+}
+@keyframes typing{
+    0%{
+        width: 0ch;
+    }
+    50%{
+        width: 19ch;
+    }
+    100%{
+        width: 0ch;
+    }
+}
+.content .image{
+    position: absolute;
+    height: 97%;
+    bottom: 0%;
+    right: 80px;
+}
+header .mediaIcons{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    right: 40px;
+    bottom: 40px;
+    /* left: 100%;
+    top: 20%; */
+}
+.mediaIcons a{
+    font-size: 30px;
+    font-weight: 500;
+    color: gray;
+    text-decoration: none;
+    opacity: 0.4;
+}
+a:hover{
+    opacity: 1.0;
+}

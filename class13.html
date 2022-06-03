@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 13</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+/* Four equal columns */
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+    @media screen and (max-width: 1400px){
+        .column{
+            flex: 10%;
+            max-width: 10%;
+            border: 2px solid purple;
+            margin-left: 5px;
+            background-color: bisque;
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+        .column{
+            flex: 25%;
+            max-width: 25%;
+            border: 2px solid green;
+            margin-left: 5px;
+        }
+    }
+
+/* If a screen is 800px or less wide, keep two columns */
+    @media screen and (max-width: 800px) {
+        .column {
+            flex:50%;
+            max-width: 50%;
+            border: 2px solid red;
+            margin-left: 5px;
+            background-color: blueviolet;
+        }
+}
+
+/* If a screen is 600px or less wide, stack the columns on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column {
+            flex: 100%;
+            max-width: 100%;
+            border: 8px dashed blue;
+            background-color: red;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+        </div>
+        <div class="column">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+        </div>
+        <div class="column">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+        </div>
+        <div class="column">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+            <img src="https://picsum.photos/200/200/?random">
+        </div>
+    </div>
+</body>
+</html>
