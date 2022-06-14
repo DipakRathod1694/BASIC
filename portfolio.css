@@ -80,17 +80,18 @@ nav .SearchBox{
 }
 header .textContent .text{
     font-size: 20px;
-    color: goldenrod;
+    color: rgb(249, 246, 246);
+    margin-bottom: 15px;
 }
 header .textContent .name{
     font-size: 50px;
-    color: green;
+    color: pink;
     font-weight: 600;
     margin: -20px 0 0 -5px;
 }
 header .textContent .job{
     font-size: 35px;
-    color: black;
+    color: beige;
     margin: 20px 0;
     display: flex;
     margin-top: -3px;
@@ -107,7 +108,7 @@ header .textContent .job{
         width: 0ch;
     }
     50%{
-        width: 19ch;
+        width: 17ch;
     }
     100%{
         width: 0ch;
@@ -134,7 +135,7 @@ header .mediaIcons{
     font-weight: 500;
     color: gray;
     text-decoration: none;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 a:hover{
     opacity: 1.0;

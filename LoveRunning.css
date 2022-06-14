@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+h2{
+    letter-spacing: 3PX;
+    color: blueviolet;
+}
+.logo{
+    float: left;
+    font-size: 250%;
+}
+.navbar{
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+.navbart .logo{
+    line-height: 75px;
+}
+
+.navbar li{
+    float: right;
+    margin-right: 30px;
+    list-style: none;
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+.navbar a:hover{
+    border-bottom: 2px solid gray;
+}
+
+#main{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.content{
+    animation: a1 5s forwards;
+}
+
+@keyframes a1{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+.textContent{
+    width: 250px;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 10px;
+    background-color: lightcoral;
+    bottom: 30px;
+    right: 100px;
+    position: absolute;
+}
+
+#textpart{
+    height: 600px;
+}
+
+.head3{
+    font-size: 280;
+    text-align: center
+  }
+
+.left{
+    padding-top: 30px;
+    width: 33%;
+    float: left;
+}
+.right{
+    padding-top: 30px;
+    width: 33%;
+    float: right;
+}
+.rightofleft{
+    float: right;
+    width: 50%;
+    line-height: 20px;
+    margin-bottom: 50px;
+    clear: both;
+}
+.rightofleft h3{
+    border-bottom: 1px solid;
+}
+.leftofright{
+    float: left;
+    width: 50%;
+    line-height: 20px;
+    margin-bottom: 50px;
+    clear: both;
+}
+.leftofright h3{
+    border-bottom: 1px solid;
+}
+.leftofright p{
+    text-align: right;
+}
+
+
