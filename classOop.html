@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class in OOP</title>
+</head>
+<body>
+    <pre>
+        <script>
+            //Creating class....
+            class Learner{
+                constructor(name){   //constructor can be used in object initializer/creation.
+                    this.name = name;
+                }
+                greet(){
+                    console.log("Hello Everyone I'm "+this.name);
+                }
+            }
+            console.log(typeof(Learner));   //class is a kind of function in js.
+            let l = new Learner("Dipak");
+            l.greet();
+
+            //class expression
+            let Rect= class{
+                constructor(height,width){
+                    this.height = hieght;
+                    this.width = width;
+                }
+            };
+            console.log(Rect.name);
+
+            let R2= class Rectangle{
+                constructor(height,width){
+                    this.height = hieght;
+                    this.width = width;
+                }
+            };
+            console.log(R2.name);
+
+            //applying getter and setter....
+
+            let Rect1= class{
+                constructor(height,width){
+                    this.height = height;
+                    this.width = width;
+                }
+                get area(){
+                    return this.a();
+                }
+                get perimeter(){
+                    return this.height*2 +this.width*2;
+                }
+                a(){
+                    return this.height * this.width;
+                }
+            };
+            const r1 = new Rect1(15,20);
+            console.log(r1.area);
+            console.log(r1.perimeter);
+
+            // using static...
+            let Rect2= class{
+                constructor(height,width){
+                    this.height = height;
+                    this.width = width;
+                }
+                static get area(){
+                    return this.a();
+                }
+                a(){
+                    return this.height * this.width;
+                }
+                static get perimeter(){
+                    return this.height*2 +this.width*2;
+                }
+            };
+            const r2 = new Rect2(15,20);
+            console.log(Rect2.perimeter);//not working.....
+
+            
+            
+            // class Area{
+            //     constructor(x,y){
+            //         this.x = x;
+            //         this.y = y;
+            //     }
+            //     static greet="hello";
+            //     static area(){
+            //         return this.x*this.y;
+            //     }
+            // }
+            // const p1 = new Area(4,5);
+            // const p2 = new Area(10,20);
+            // console.log(p1.greet);
+            // console.log(p1.area);
+            // console.log(p2.greet);
+            // console.log(p2.area);
+            // console.log(Area.greet);
+            // console.log(Area.area);
+
+            //without using object in console
+            class Car{
+                constructor(name){
+                    this.name = name;
+                }
+                static hello(x){
+                    return "Hello " + x.name;
+                }
+            }
+            let myCar = new Car("BMW");
+            console.log(Car.hello(myCar));
+
+            //
+            class Area{
+                constructor(width,height){
+                    this.width = width;
+                    this.height=height;
+                }
+                static hello(x1){
+                    return x1.width * x1.height;
+                }
+            }
+            let area = new Area(5,7);
+            console.log(Area.hello(area));
+
+
+            
+        </script>
+    </pre>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Strings</title>
+</head>
+<body>
+    <pre>
+        <script>
+            var x="helloworld";
+            var y='hii! everyone';
+            var z='it\'s me dipak';
+            var a="today we are going to learn \n strings and we arrays";
+            document.writeln(a);
+            var path="c:\\users\\desktop\\javascript";
+            document.writeln(path);
+
+            //Operations on strings
+            document.writeln(y.length); //includes space too in counting.
+            var s=a.indexOf("we");
+            var p=a.lastIndexOf("we");
+            
+            document.writeln(s);
+            document.writeln(p);
+            document.writeln(a.search("we")); //without storing it.
+            document.writeln(a[0]);  //accessing character.
+            document.writeln(x.slice(3,7)); //getting substring from index.
+            document.writeln(x.slice(3));  //it will show from 3 to end.
+            document.writeln(x.substring(5,0)); //substring can interchange value.
+            document.writeln(x.substring(-2,5)); // minus will be converted into zero if one is positive. if both are negative it won't display anything.
+            document.writeln(x.substr(3,5));   // it will show from 3 to lenth of 5.
+            document.writeln(x.substr(3));  //it will give from 3 to whole.
+
+            var b= x.replace("hello","hii");
+            document.writeln(b);
+            var c=x.toUpperCase();
+            document.writeln(c);
+            var d=x +" " + y;
+            document.writeln(d);
+            x += " hii";
+            document.writeln(x);
+            document.writeln(x.concat(y));
+            document.writeln(x.charAt(5));
+            document.writeln(x.charAt(x.length-7));
+            document.writeln(x[x.length-1]); //last element.
+
+
+
+            var string="Programming";
+            //first method
+            var str=string.split('');
+            var count=1;
+            // for(var i=0;i<x.length;i++){
+            //     for(var j=i+1;j<x.length;j++){
+            //         if(x[i]==x[j]){
+            //             str.push(x[i]);
+            //         }
+                    
+            //     }
+            // }
+            for(var i=0;i<x.length;i++){
+                for(var j=i+1;j<x.length;j++){
+                    if(str[i] == str[j] && str[i] != ' ') 
+                    {  
+                        count++;  
+                        //Set string[j] to 0 to avoid printing visited character  
+                        str[j] = '0';  
+                    }
+                }
+                if(count>1 && str[i]!="0"){
+                    console.log(str[i]);
+                }
+            }
+            console.log(str);
+
+
+            var a1=[32,55,45,25,32];
+            const a2=a1.map(duplicate);
+            function duplicate(n){
+                return 2*n;
+            }
+            console.log(a2);
+
+            const a3=a1.map(Math.sqrt);
+            console.log(a3);
+
+            var a4="HelloWorld";
+            console.log(a4.replace("Hello","Hiii"));
+
+
+             // Questions 
+           //1. How to reverse a string
+           //2. How to capitalize the first letter of the string.
+           //3. write a functions which take two strings and gives intial letter of those strings.
+           //4. insert a string at a particular position in a string.
+           //5. remove the first occurance of letter in a string.
+           //6. What happens if you use let a second time with the same variable name? What if you use var instead?
+            
+
+           //Answer 1
+           var a1="HelloWorld";
+           var str="";
+           for(var i=a1.length-1;i>=0;i--)
+           {
+                str=str +a1[i];
+           }
+           console.log(str);
+
+           //Answer 2
+           var a1="helloworld";
+           str1=a1[0].toUpperCase();
+           str2=a1.slice(1);
+           str3=str1.concat(str2);
+           console.log(str3);
+
+           //Answer 3;
+           var a4="Hello";
+           var a5="World";
+           console.log(a4.slice(0,1));
+           console.log(a5.slice(0,1));
+
+           //Answer 4
+           var i=4;
+           var a6="HelloWorld";
+           var substr="Mydvbd";
+           console.log(a6.slice(0,i)+substr+a6.slice(i));
+
+           //Answer 5
+           var a7="Hello Hii AHello Hii World";
+           var occ="Hi";
+           var index=a7.indexOf(occ);
+           console.log(a7);
+	        if (index === -1) {
+		        console.log(a7);
+	        }
+            else{
+	            console.log(a7.slice(0, index) + a7.slice(index + occ.length));
+            }
+
+           //Answer 6
+           // If we use let second time with same variable then it wil
+           //   give an error that the identifier has already been delared .
+           //  so you can not use "let" twice with same variable .
+           // But if we use "var" instead of "let" it will not give error,
+           // it will simply change the old value to new value .
+
+
+
+            //Question
+
+
+            var a="Ajgrek";
+            var vowelString="AEIOUaeiou";
+            var count=0;
+            for(var i=0;i<a.length;i++){
+                if(vowelString.indexOf(a[i])!= "-1"){
+                    count++;
+                }
+            }
+            console.log("Vowels:"+count);
+            console.log("Consonants"+a.length-count);
+
+            var a = [];
+
+a.unshift(1);
+
+a.unshift(22);
+
+a.shift();
+
+a.unshift(3,[4,5]);
+
+a.shift();
+
+a.shift();
+
+a.shift();
+console.log(a);
+        </script>
+    </pre>
+</body>
+</html>

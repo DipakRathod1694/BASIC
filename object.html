@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <pre>
+        <script>
+            //1st method : using variable only.
+            const student={
+                first_name : 'Dipak',
+                last_name : 'Rathod',
+                hobbies:{
+                    outdoor : 'tennis',
+                    indoor:'watching TV',
+                },
+                hello: function(){
+                    console.log("hello everyone");
+                },
+                full_name : function(){
+                    return this.first_name +' ' +this.last_name;
+                }
+            }
+            console.log(student.full_name());
+            console.log(student.hobbies.indoor);  //nested property.
+
+            //2nd Method : using new .
+            var student1 =new Object();
+
+            student1.firstname = "Dipak";
+            student1["lastname"] = "Rathod";
+            student1.age = 35;
+            student1.getFullName = function (){
+                return this.firstname + ' ' + this.lastname;
+            };
+            console.log(student1.getFullName());
+
+            // Employee Object
+            var Employee = new Object();
+
+            Employee.id = "01";
+            Employee.name = "Dipak Rathod";
+            Employee.salery = "40 lpa";
+            Employee.getInfo = function(){
+                return 'ID : ' + this.id + ', Name : ' + this.name + ', Salery :' +this.salery;
+            }
+            console.log(Employee.getInfo());
+            console.log(typeof(Employee));   // to check Datatype
+            console.log(Employee["id"]);   //to show particular property.
+            console.log(Employee.constructor);
+
+
+
+            //constructors..........
+            function name(a){
+                this.b= a;
+            }
+            const obj1 = new name("Dipak");
+            console.log(obj1.constructor);
+            console.log(typeof(obj1)); 
+            console.log(obj1.b);
+            const obj2 = new name("Rathod");
+            console.log(obj2.b);
+
+            //using objects...
+            function User(first, last) {
+            this.firstName = first;
+            this.lastName = last;
+            }
+            var user1 = new User("Dipak", "Rathod");
+            console.log(user1);
+            var user2 = new User("Rathod", "Dipak");
+            console.log(user2);
+
+
+            let learner = {
+                first_name : "Dipak",
+                last_name : "Rathod",
+            
+                get full_name() {
+                    return this.first_name + ' ' + this.last_name;
+                },
+                set full_name(name){
+                    [this.first_name,this.last_name]= name.split(" ");
+                },
+            };
+            // alert(learner.full_name);
+
+            learner.full_name = "sdbvh sdfssg";
+            console.log(learner.full_name);
+            
+            let user ={
+                get name(){
+                    return this._name;
+                },
+                set name(value){
+                    if(value.length <4){
+                        alert("name is too short,need to enter atleast 4 char.");
+                        return;
+                    }
+                    else if(value.length>15){
+                        alert("name is too large,need to enter atmost 15 char.");
+                        return;
+                    }
+                    this._name = value;
+                }
+            }
+            user.name = "Dipak Rathod";
+            console.log(user.name);
+
+            function User(name, bday) {
+                this.name = name;
+                this.bday = bday;
+                Object.defineProperty(this, "age", {
+                    get() {
+                    let todayYear = new Date().getFullYear();
+                    return todayYear - this.bday.getFullYear();
+                    }
+                });
+                }
+
+            
+
+            let john = new User("Dipak", new Date(2001,09,01));
+
+            console.log( john.bday );
+            console.log(john.age);
+
+
+            //Question
+            // create objects of square,rectangle,
+            // take property as area,parameters
+            // invoke get and set functions
+            // length should not be greater 100;
+            // if greater then take it as 100 only.
+            // dont use alert,use console.log.
+            
+            //Answer.....
+            let square={
+                get length()
+                {
+                    return this._length;
+                },
+                set length(val)
+                {
+                    if(val>100)
+                    {
+                        val=100;
+                        
+                    }
+                    this._length=val;
+                },
+                get width()
+                {
+                    return this._width;
+                },
+                set width(val1)
+                {
+                    this._width=val1;
+                },
+                get area(){
+                return this.length*this.width;
+                }
+            };
+            let tringle={
+                get height()
+                {
+                    return this._height;
+                },
+                set height(val)
+                {
+                    if(val>100)
+                    {
+                        val=100;
+                        
+                    }
+                    this._height=val;
+                },
+                get base()
+                {
+                    return this._base;
+                },
+                set base(val1)
+                {
+                    this._base=val1;
+                },
+                get area(){
+                return 1/2*(this.height*this.base);
+                }
+            };
+            square.length=150;
+            square.width=30;
+            tringle.height=30;
+            tringle.base=10;
+            console.log("area of square "+square.area);
+            console.log("area of tringle "+tringle.area);
+
+
+
+        </script>
+    </pre>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance of class in OOP</title>
+</head>
+<body>
+    <pre>
+        <script>
+            class Animal{
+                constructor(legs){
+                    this.legs = legs;
+                }
+                walk(){
+                    console.log("Walking on " + this.legs + " legs");
+                }
+                static greet(){
+                    console.log("Hello");
+                }
+            }
+            class Bird extends Animal{
+                constructor(legs,food){  //if we do not declare constructor here it will still run....
+                    super(legs);
+                    this.food = food;
+                }
+                fly(){
+                    console.log("Flying with " + this.legs + " legs");
+                }
+                foods(){
+                    console.log(this.food);
+                }
+            }
+            let b1 = new Bird(2,"Insects");
+            b1.walk();
+            b1.fly();
+            b1.foods(); 
+            Animal.greet();
+            Bird.greet();
+            //if we use same method as walk in child class too it will access child class not parent class.
+
+
+
+            //Array methods using Array as parent class.
+            class S1 extends Array{
+                add(a){
+                    super.push(a);
+                }
+                remove(){
+                    return super.shift();
+                }
+                empty(){
+                    return this.length===0;
+                }
+            }
+            var n1 = new S1();
+            n1.add(91);
+            n1.add(92);
+            n1.add(9);
+            console.log(n1);
+            n1.remove();
+            console.log(n1);
+            while(!n1.empty()){
+                console.log(n1.remove());
+            }
+            console.log(n1);
+
+
+            // class S2 extends String{
+            //     concat(a){
+            //         super.concat(a);
+            //     }
+            //     index(s){
+            //         console.log(s.indexOf('D'));
+            //     }
+
+            // }
+            // var n2 = new S2();
+            // n2.index("Hello");
+            // console.log(n2);
+
+            //Sting methos using string as parent class...
+            class S2 extends String{
+                reverse(s){
+                    var rev = '';
+                    for(var i=s.length-1; i>=0; i--){
+                    rev += s[i];
+                }
+                console.log(rev);
+                }
+                index(s){
+                console.log(s.indexOf('R'));
+                }
+                slce(s){
+                    console.log(s.slice(0,4));
+                }
+                len(s){
+                console.log(s.length);
+                }
+            }
+            var str = new S2();
+            var string = "Dipak Rathod" //prompt("enter the string");
+            str.reverse(string);
+            str.index(string);
+            str.len(string);
+            str.slce(string);
+
+
+            //Multilevel Inheritance.....
+            class Animal1{
+                constructor(legs){
+                    this.legs = legs;
+                }
+                walk(){
+                    console.log("Walking on " + this.legs + " legs");
+                }
+                static greet(){
+                    console.log("Hello");
+                }
+            }
+            class Bird1 extends Animal1{
+                constructor(legs,food){  //if we do not declare constructor here it will still run....
+                    super(legs);
+                    this.food = food;
+                }
+                fly(){
+                    console.log("Flying with " + this.legs + " legs");
+                }
+                foods(){
+                    console.log(this.food);
+                }
+            }
+            class Sparrow extends Bird1 {
+                constructor(legs,color){
+                    super(legs);
+                    this.color=color;
+                }
+
+                colors(){
+                    console.log("It has " +this.color + "color.");
+                }
+            }
+            var b3 = new Sparrow(2,"gray");
+            b3.colors();
+            b3.walk();
+        </script>
+    </pre>
+</body>
+</html>

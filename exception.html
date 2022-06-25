@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling</title>
+</head>
+<body>
+    <p>Enter your number between 5 to 20</p>
+    <input type="text" id="demo" name="demo">
+    <button onclick="f1()">Input</button>
+    <p id="p01"></p>
+    <pre>
+        <script>
+            // function f1(){
+            //     const message=document.getElementById("p01");
+            //     n.innerHTML="";
+            //     let x=document.getElementById("demo").value;
+            //     try{
+            //         if(x=="") throw "empty";
+            //         if(isNaN(x)) throw "not a number";
+            //         if(x<5) throw "too low";
+            //         if(x>20) throw "too high";
+            //     }
+            //     catch(err){
+            //         message.innerHTML="input is " +err;
+            //     }
+            // }
+
+
+            var a=7;
+            var b=0;
+            
+           
+            try{
+                if(b==0) {throw "there is an error";}
+                else{
+                 var c=a/b;
+                console.log(c);
+                } 
+            }
+            catch(err){
+                console.log(err);
+            }
+
+
+            var a = 12321;
+            var s=a;
+            var rev,b=0;
+            while(a!=0){
+            b = a % 10;
+            rev = rev*10 + b;
+            a = Math.floor(a/10);
+            }
+            console.log(rev);
+        </script>
+    </pre>
+</body>
+</html>

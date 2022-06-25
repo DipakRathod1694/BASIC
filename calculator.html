@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <pre>
+        <script>
+            function FibonacciSeries(){
+                var a=parseInt(prompt("How many numbers you want?"));
+                var x=0;
+                var y=1;
+                var z;
+                var i;
+                console.log("Fibonnaci Series");
+                for(i=1;i<=a;i++){
+                    console.log(x);
+                    z=x+y;
+                    x=y;
+                    y=z;
+                }
+            }
+
+
+            function PrimeFactors(){
+                var a=parseInt(prompt("Enter the number of which you want to get the prime factors."));
+                // function prime(num){
+                // for(let i=2;i<=Math.sqrt(num);i++){
+                //     if(num%i===0){
+                //         return false;
+                //     }
+                // }
+                // return true;
+                // }
+                // const res = [];
+                // for(let i=2;i<=a;i++){
+                //     while(prime(i) && a%i===0){
+                //         if (!res.includes(i)) res.push(i);
+                //         a/=i;
+                //     }
+                //     console.log(res);
+                // }
+                // return res;
+
+                var factors=[];
+                var divisor=2;
+                while(a>=2){
+                    if(a%divisor==0){
+                        factors.push(divisor);
+                        a=a/divisor;
+                    }
+                    else{
+                        divisor++;
+                    }
+                }
+                return factors;
+            }
+
+
+            function MultiplicationTable(){
+                var num=prompt("Enter number for table:");
+                for( var i=1;i<=10;i++)
+                {
+                    console.log(num +"x"+i+"="+(num*i)+".");
+                }
+            }
+
+
+            function Palindrome(){
+            //     var a=prompt("Enter your string");
+            //     let i=0;
+            //     let j=a.length-1;
+            //     while(i<j){
+            //         if(a[i]==a[j]){
+            //             i++;
+            //             j--;
+            //         }else{
+            //             return false;
+            //         }
+        
+            //     }
+            //    return true;
+
+            var a=prompt("Enter your string");
+                const b=a.split('').reverse().join('');
+                return a===b;
+
+
+            }
+
+            function primefactors(num){
+                var a=num;
+                function prime(num){
+                for(let i=2;i<=Math.sqrt(num);i++){
+                    if(num%i===0){
+                        return false;
+                    }
+                }
+                return true;
+                }
+                const res = [];
+                for(let i=2;i<=a;i++){
+                    while(prime(i) && a%i===0){
+                        if (!res.includes(i)) res.push(i);
+                        a/=i;
+                    }
+                    // console.log(res);
+                }
+                return res;
+            }
+
+            function Hcf(){
+                var x=prompt("Enter your first number:");
+                var y=prompt("Enter your second number:");
+                const res1= primefactors(x);
+                const res2= primefactors(y);
+                const res3=[];
+                var j=0;
+                for(var i=0;i<res1.length;i++){
+                    if(res1[i]===res2[j]){
+                        res3.push(res1[i]);
+                        j++;
+                    }
+                    
+                }
+                var ans=1;
+                for(var i=0;i<res3.length;i++){
+                    ans=ans*res3[i];
+                }
+                console.log(ans);
+            }
+
+            function MultiplicationTable2(){
+                var a=prompt("From 2 to which table do you want?");
+                for(var i=2;i<=a;i++){
+                    console.log("MUl.Table of-"+i);
+                    for( var j=1;j<=10;j++)
+                    {
+                        console.log(i +"x"+j+"="+(i*j)+".");
+                    }
+                }
+            }
+            var op= prompt("Enter which programme do you want to run?\n" + "fs=Fibonacci Series,\npf=Prime Factors,\nmt=Multiplication Table,\npal=Palindrome,\nhcf=Hcf,\nmt2=Multiplication table 2");
+            if(op=="fs"){  FibonacciSeries(); }
+            else if(op=="pf"){ PrimeFactors(); }
+            else if(op=="mt"){ MultiplicationTable(); }
+            else if(op=="pal"){ console.log(Palindrome());  }
+            else if(op=="hcf"){ Hcf(); }
+            else if(op=="mt2"){ MultiplicationTable2()}
+        </script>
+    </pre>
+</body>
+</html>
