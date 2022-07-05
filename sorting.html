@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Techniques</title>
+  </head>
+  <body>
+    <pre>
+        <script>
+            //Selection sort.
+            //Time complexity = O(n*n);
+            //Space complexity = O(1);
+        
+            function selectionSort(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    let lowest = i
+                    for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[j] < arr[lowest]) {
+                        lowest = j
+                    }
+                    }
+                    if (lowest !== i) {
+                    // Swapping
+                    [arr[i], arr[lowest]] = [arr[lowest], arr[i]];
+                    }
+                }
+                return arr
+            }
+            console.log("Selection Sorted Array : " + selectionSort([8, 55, 10, 2]))
+
+
+            //Bubble sort.
+            //Time complexity = O(n*n);
+            //Space complexity = O(1);
+
+
+
+            //1st method.
+            function bubbleSort(a){
+                for(var i=0;i<a.length;i++){
+                    for(var j=i+1;j<a.length;j++){
+                        if(a[i]>a[j]){
+                            [a[i],a[j]]=[a[j],a[i]];
+                        }
+                    }
+                }
+                return a;
+            }
+            console.log("Bubble Sorted Array : " + bubbleSort([3,1,8,2,9,4]));
+
+            //2nd method.
+            function swap(arr, first_Index, second_Index){
+                var temp = arr[first_Index];
+                arr[first_Index] = arr[second_Index];
+                arr[second_Index] = temp;
+            }
+
+            function bubble_Sort(arr){
+
+                var len = arr.length,
+                    i, j, stop;
+
+                for (i=0; i < len; i++){
+                    for (j=0, stop=len-i; j < stop; j++){
+                        if (arr[j] > arr[j+1]){
+                            swap(arr, j, j+1);
+                        }
+                    }
+                }
+                return arr;
+            }
+            console.log("Bubble Sorted Array : " + bubble_Sort([3,4,1,8]));
+
+            //3rd method.
+            const bubbleSORT =arr =>{
+                let swapped =false;
+                const a = [...arr];
+                for(let i=1;i<a.length-1;i++){
+                    swapped=false;
+                    for(let j=0;j<a.length-i;j++){
+                        if(a[j+1] < a[j]){
+                            [a[j],a[j+1]] = [a[j+1],a[j]];
+                            swapped = true;
+                        }
+                    }
+                    if(!swapped) return a;
+                }
+                return a;
+            }
+            console.log("Bubble Sorted Array : " + bubbleSort([2, 1, 4, 9,8]));
+
+
+            //Insertion Sort.
+            //Time complexity = O(n*n);
+            //Space complexity = O(1);
+            function insertionSort(arr){
+                for(let i=1;i<arr.length;i++){
+                    let currentValue = arr[i];
+                    let j
+                    for(j=i-1;j>=0 && arr[j] > currentValue;j--){
+                        arr[j+1] = arr[j];
+                    }
+                    arr[j+1] = currentValue;
+                }
+                return arr;
+            }
+            console.log("Insertion Sorted Array : " + insertionSort([2,1,8,20,15,18,12]));
+
+
+
+
+
+            //Merge Sort.
+            //Time complexity = O(n*log(n));
+            //Space complexity = O(n);
+
+            function mSort (array) {
+                if (array.length === 1) {
+                return array                            // return once we hit an array with a single item
+            }
+            const middle = Math.floor(array.length / 2) // get the middle item of the array rounded down
+            const left = array.slice(0, middle)         // items on the left side
+            const right = array.slice(middle)           // items on the right side
+            console.log(middle);
+            return merge(
+                mSort(left),
+                mSort(right)
+            )
+            }
+            // compare the arrays item by item and return the concatenated result
+            function merge (left, right) {
+                let result = []
+                let leftIndex = 0
+                let rightIndex = 0
+                while (leftIndex < left.length && rightIndex < right.length) {
+                    if (left[leftIndex] < right[rightIndex]) {
+                    result.push(left[leftIndex])
+                    leftIndex++
+                    console.log("</br>");        
+                    } else {
+                    result.push(right[rightIndex])
+                    rightIndex++      
+                    }
+                }
+                return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
+            }
+            const list = [4,7,5,9,1,3,8,2]
+            console.log("Merge Sorted Array : " + mSort(list));
+
+
+            //Quick sort
+
+
+            function swap(arr, i, j) {
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            
+            function partition(arr, low, high) {
+
+                let pivot = arr[high];
+        
+                let i = (low - 1);
+            
+                for (let j = low; j <= high - 1; j++) {
+            
+                    if (arr[j] < pivot) {
+            
+                        i++;
+                        swap(arr, i, j);
+                    }
+                }
+                swap(arr, i + 1, high);
+                return (i + 1);
+            }
+            
+            function quickSort(arr, low, high) {
+                if (low < high) {
+                    let pi = partition(arr, low, high);
+            
+                    quickSort(arr, low, pi - 1);
+                    quickSort(arr, pi + 1, high);
+                }
+            }
+            
+            let arr = [10, 7, 8, 9, 1, 5];
+            let n = arr.length;
+            
+            quickSort(arr, 0, n - 1);
+            console.log("Quick Sorted Array: "+arr);
+
+            
+            //Heap sort
+            function sort(arr)
+            {
+                var n = arr.length;
+        
+                for (var i = Math.floor(n / 2) - 1; i >= 0; i--)
+                    heapify(arr, n, i);
+        
+                for (var i = n - 1; i > 0; i--) {
+                    // Move current root to end
+                    var temp = arr[0];
+                    arr[0] = arr[i];
+                    arr[i] = temp;
+        
+                    // call max heapify on the reduced heap
+                    heapify(arr, i, 0);
+                }
+            }
+        
+            // To heapify a subtree rooted with node i which is
+            // an index in arr[]. n is size of heap
+            function heapify(arr, n, i)
+            {
+                var largest = i; // Initialize largest as root
+                var l = 2 * i + 1; // left = 2*i + 1
+                var r = 2 * i + 2; // right = 2*i + 2
+        
+                // If left child is larger than root
+                if (l < n && arr[l] > arr[largest])
+                    largest = l;
+        
+                // If right child is larger than largest so far
+                if (r < n && arr[r] > arr[largest])
+                    largest = r;
+        
+                // If largest is not root
+                if (largest != i) {
+                    var swap = arr[i];
+                    arr[i] = arr[largest];
+                    arr[largest] = swap;
+        
+                    // Recursively heapify the affected sub-tree
+                    heapify(arr, n, largest);
+                }
+            }
+   
+            var arr1 = [ 5, 12, 11, 13, 4, 6, 7 ];
+            var n1 = arr.length;
+        
+            sort(arr1);
+        
+            console.log( "Heap Sorted Array is "+arr1);
+          
+
+        </script>
+    </pre>
+  </body>
+</html>

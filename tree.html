@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Tree
+      // class TreeNode{
+      //     constructor(value){
+      //         this.value = value;
+      //         this.descendants = [];
+      //     }
+      // }
+      // const t1 = new TreeNode('Dipak');
+      // const t2 = new TreeNode('Rathod');
+      // const t3 = new TreeNode('Manish');
+      // const t4 = new TreeNode('Biswajit');
+
+      // t1.descendants.push(t2);
+      // t2.descendants.push(t3,t4);
+
+      // console.log(t1);
+
+      //Binary Search Tree(BST).
+      var left = 0;
+      var right = 1;
+      class TreeNode {
+        constructor(value) {
+          this.value = value;
+          this.left = null;
+          this.right = null;
+        }
+      }
+
+      class BST {
+        constructor() {
+          this.root = null;
+        }
+        insert(value) {
+          var t1 = new TreeNode(value);
+          if (this.root === null) {
+            this.root = t1;
+          } else {
+            this.insertNode(this.root, t1);
+          }
+        }
+        insertNode(node, newNode) {
+          if (newNode.value < node.value) {
+            if (node.left === null) {
+              node.left = newNode;
+            } else {
+              this.insertNode(node.left, newNode);
+            }
+          } else {
+            if (node.right === null) {
+              node.right = newNode;
+            } else {
+              this.insertNode(node.right, newNode);
+            }
+          }
+        }
+        searchItem(value) {
+          let currentNode = this.root;
+          while (currentNode !== null) {
+            if (value === currentNode.value) {
+              return true;
+            } else if (value < currentNode.value) {
+              currentNode = currentNode.left;
+            } else {
+              currentNode = currentNode.right;
+            }
+          }
+          return false;
+        }
+        deleteNode(value) {
+          root = deleteItem(root, value);
+        }
+        deleteItem(root, value) {
+          if (root == null) {
+            return false;
+          }
+          if (value < root.value) {
+            root.left = deleteItem(root.left, value);
+            return root;
+          } else if (value > root.value) {
+            root.right = deleteItem(root.right, value);
+            return root;
+          } else {
+            if (root.left === null && root.right === null) {
+              root = null;
+              return root;
+            }
+            if (root.left === null) {
+              return root.right;
+            }
+            if (root.right === null) {
+              return root.left;
+            }
+            let current = root.right;
+            while (current.left !== null) {
+              current = current.left;
+            }
+            root.value = current.value;
+            root.right = deleteItem(root.right, current.value);
+            return root;
+          }
+        }
+        minValue(node) {
+          if (node === null) {
+            return null;
+          }
+          let current = node;
+          while (current.left !== null) {
+            current = current.left;
+          }
+          return current.value;
+        }
+        maxValue(node) {
+          if (node === null) {
+            return null;
+          }
+          let current = node;
+          while (current.left !== null) {
+            current = current.left;
+          }
+          return current.value;
+        }
+      }
+
+      const BST1 = new BST();
+      BST1.insert(2);
+      BST1.insert(4);
+      BST1.insert(6);
+      BST1.insert(8);
+      BST1.insert(1);
+      console.log(BST1);
+      console.log(BST1.searchItem(9));
+
+    //   console.log(BST1.deleteNode(1));
+      console.log(BST1.maxValue(2));
+      console.log(BST1.minValue(2));
+
+
+
+      'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+
+
+function main() {
+    const firstMultipleInput = readLine().replace(/\s+$/g, '').split(' ');
+
+    const a = parseInt(firstMultipleInput[0], 10);
+
+    const b = parseInt(firstMultipleInput[1], 10);
+}
+
+    </script>
+  </body>
+</html>

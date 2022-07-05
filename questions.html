@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions</title>
+  </head>
+  <body>
+    <script>
+      // void foo(int[] array) {
+      // int sum = 0;
+      // int product = 1;
+      // for (inti= 0; i < array.length; i++) {
+      // sum += array[i);
+      // }
+      // for (int i= 0; i < array.length; i++) {
+      // product*= array[i];
+      // }
+      // System.out.println(sum + ", " + product);
+      // }
+
+      //to swap the minimum and maximum element in an integer array.
+
+      var a = [12, 10, 5, 45, 75, 92, 24];
+      var n = a.length;
+      var maxx = 0;
+      var index1,
+        index2 = 0;
+      for (var i = 0; i < n; i++) {
+        maxx = Math.max(maxx, a[i]);
+        index1 = i;
+      }
+      var minn = maxx;
+      for (var i = 0; i < n; i++) {
+        minn = Math.min(minn, a[i]);
+        index2 = i;
+      }
+
+      // for(var i=0;i<n;i++){
+      //     if(a[i]==minn){
+      //         a[i]=maxx;
+      //     }
+      //     else if(a[i]==maxx){
+      //         a[i]=minn;
+      //     }
+      // }
+      [a[index1], a[index2]] = [a[index2], a[index1]];
+      console.log("Minimum is :" + minn);
+      console.log("Maximum is :" + maxx);
+      console.log(a);
+
+      //         var a=[15,10,5,20,25];
+      //         var n=a.length;
+
+      //    var max=0;
+      //    for(let i=1;i<n;i++)
+      //    {
+      //     if(a[i]>a[max])
+      //     {
+      //         max=i;
+      //     }
+      //    }
+      //    console.log("max value is "+a[max]+" at index "+max);
+      //    var min=0;
+      //    for(let i=1;i<n;i++)
+      //    {
+      //     if(a[i]<a[min])
+      //     {
+      //         min=i;
+      //     }
+      //    }
+      //    console.log("min value is "+a[min]+" at index "+min);
+      //    console.log("after swap");
+      //    var temp=max;
+      //    max=min;
+      //    min=temp;
+      //    console.log("min value is "+a[min]+" at index "+min);
+      //    console.log("max value is "+a[max]+" at index "+max);
+      //    console.log(a);
+
+      //Write a method to replace all spaces in a string with '%20'.
+      // Input: "Mr John Smith ", 13
+      // Output: "Mr%20John%20Smith"
+
+      //answer...
+
+      var a = "Mr John Smith";
+      // for(var i=0;i<a.length;i++){
+      //     if(a[i]== ' '){
+      //         a = a.replace(a[i],"%20");
+      //     }
+      // }
+
+    //   a = a.replaceAll(" ", "%20");
+    //   console.log(a);
+
+      //Question 1
+      //Implement an algorithm to determine if a string has all unique characters. What if you
+      //cannot use additional data structures?
+
+      let str="harshitjain";
+       var flag=false;
+       for(let i=0;i<str.length;i++)
+        {
+        for(let j=i+1;j<str.length;j++)
+        {
+            if(str[i]==str[j])
+            {
+                flag=false;       
+            }
+            else{
+                flag=true;          
+            }
+        }
+        }
+        if(flag==false)
+        {
+            console.log("str doesn't have all unique character");
+        }
+        else{
+            console.log("str have all unique character");
+        }
+
+      //Question 2
+      //Given two strings, write a method to decide if one is a permutation of the
+      //other.
+
+      //Answer. 2
+      var str1 = "string";
+      var str2 = "rigsnt";
+
+      str3 = str1.split(" ");
+      str4 = str2.split(" ");
+      str3.sort();
+      str4.sort();
+
+      var count = 0;
+      for (var i = 0; i < str1.length; i++) {
+        if (str3[i] == str4[i]) {
+          console.log("It is permutation");
+          count++;
+        }
+        else{
+            console.log("it is not");
+        }
+      }
+      console.log(count);
+      if (count == str1.length) {
+        console.log("It is.");
+      } else {
+        console.log("It is not.");
+      }
+
+      /*
+      Implement a method to perform basic string compression using the counts
+        of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the
+        "compressed" string would not become smaller than the original string, your method should return
+        the original string. You can assume the string has only uppercase and lowercase letters (a - z).
+        */
+
+    //   var a = "aabcccccaaa";
+    //   var b = a.split(' ');
+    //   var count = 1;
+    //   for (var i = 0; i < b.length; i++) {
+    //     while (a[i] == a[i + 1]) {
+    //       count++;
+    //     }
+    //     console.log(a[i] + count);
+    //   }
+
+        var a = "aabcccccaaa";
+        let count = 1;
+        for(var i=0;i<a.length;i++){
+            count++;
+            if(i+1>a.length || a[i]!=a[i+1]){
+                continue;
+            }
+            console.log(a[i]+count);
+        }
+
+       /* Grid: Imagine a robot sitting on the upper left corner of grid with r rows and c columns.
+        The robot can only move in two directions, right and down, but certain cells are "off limits" such that
+        the robot cannot step on them. Design an algorithm to find a path for the robot from the top left to
+        the bottom right. */
+
+
+                Arraylist<Point> getPath(boolean[][] maze) {
+     ArrayList<Point> path = new Arraylist<Point>();
+     return path;
+     }
+        return null;
+     
+    
+         boolean getPath(boolean[][] maze, int row, int col, Arraylist<Point> path) {
+         /* If out of bounds or not available, return.*/
+     if (col < 0 11 row < 0 11 !maze[row][col]) {
+         return false;
+         }
+        
+         boolean isAtOrigin =(row == 0) && (col == 0);
+        
+         /* If there's a path from the start to here, add my location. */
+         if (isAtOrigin I I getPath(maze, row, col - 1, path) I I
+         getPath(maze, row - 1, col, path)) {
+         Point p = new Point(row, col);
+         path.add(p);
+         return true;
+         }
+        
+         return false;
+         }
+
+
+         //question. Write code to remove duplicates from an unsorted linked list.
+
+         /*
+            Write code to partition a linked list around a value x, such that all nodes less than x come
+            before all nodes greater than or equal to x. If x is contained within the list, the values of x only need
+            to be after the elements less than x (see below). The partition element x can appear anywhere in the
+            "right partition"; it does not need to appear between the left and right partitions.
+            EXAMPLE
+            Input:
+            Output:
+            3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition= 5]
+            3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+        
+            Given a grid A of size N*m. 2 players playing a game on it taking alternate turns.In each turn,a player chooses subset of elements from any row andreplace each of them with their proper divisor.A proper divisor of number N is any divisor of N,not equal to N.the player who is unable to move loses..Determine the winner of game.
+
+
+            Alice has got a random num generator. the generator generate a random num from 1 to N equiprobably.now alice want to know the expected number of turn until K distinct element are generated. Help alice find this modulo 10^9+7
+
+        */
+
+
+    </script>
+  </body>
+</html>
